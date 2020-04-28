@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
+project(points_and_cuda LANGUAGES CXX)
+
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /GL")
+ 
+find_package(CUDA)
+
+cuda_add_executable(point_test data_source.hpp main.cu)
+
+target_link_libraries(point_test)
